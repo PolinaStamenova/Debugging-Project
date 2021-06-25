@@ -173,6 +173,7 @@
             required
             placeholder="Name"
             maxlength="30"
+            oninput="storeData()"
           />
           <input
             type="email"
@@ -180,6 +181,7 @@
             id="user-email"
             required
             placeholder="Email"
+            oninput="storeData()"
           />
           <textarea
             name="message"
@@ -187,6 +189,7 @@
             required
             placeholder="Write your message here"
             maxlength="500"
+            oninput="storeData()"
           >
           </textarea>
           <span id="error-message"></span>

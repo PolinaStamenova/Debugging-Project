@@ -357,3 +357,27 @@ form.addEventListener("submit", (e) => {
       "Please, use only lowercase letter for your email!";
   }
 });
+
+// ************Local storage for form-inputs************
+
+function UserData(name, email, message) {
+  this.name = name;
+  this.email = email;
+  this.message = message;
+}
+
+function storeeDate() {
+  let nameInput = document.getElementById("user-name").value;
+  let emailInput = document.getElementById("user-email").value;
+  let messageInput = document.getElementById("message").value;
+  let userData = new UserData(nameInput, emailInput, messageInput);
+
+  localStorage.setItem("userData", JSON.stringify(userData));
+}
+
+if (localStorage.getItem("userData")) {
+  let userData = JSON.parse(localStorage.getItem("userData"));
+  document.getElementById("user-name").value = userData.name;
+  document.getElementById("user-email").value = userData.email;
+  document.getElementById("message").value = userData.message;
+}
